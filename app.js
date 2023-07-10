@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyparser = require("body-parser");
 const date = require(__dirname + "/date.js")
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -44,6 +45,8 @@ app.get("/", function(req, res) {
         res.redirect("/work");
     });
 
-app.listen(3000, function() {
-  console.log("Server is started on port 3000");
-});
+// app.listen(3000, function() {
+//   console.log("Server is started on port 3000");
+// });
+
+app.listen(PORT, () => console.log('Server is running on port ${PORT}'));
